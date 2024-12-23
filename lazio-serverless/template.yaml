@@ -1,0 +1,60 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  lazio-serverless
+
+  SAM Template for lazio-serverless
+
+Globals:
+  Function:
+    Timeout: 10
+    MemorySize: 128
+
+Resources:
+  LazioBotFunction:
+    Type: AWS::Serverless::Function 
+    Properties:
+      CodeUri: lazio/
+      Handler: app.lambda_handler
+      Runtime: python3.9
+      Architectures:
+        - x86_64
+      Events:
+        HelloWorld:
+          Type: ScheduleV2
+          Properties:
+            ScheduleExpression: rate(30 minutes)
+      Policies:
+        - Statement:
+            Effect: Allow
+            Action:
+              - dynamodb:PutItem
+            Resource: !Sub arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/LazioDiscoLogs
+        - Statement:
+            Effect: Allow
+            Action:
+              - events:PutRule
+              - events:PutTargets
+              - events:DeleteRule
+              - events:RemoveTargets
+            Resource: "*"
+        - Statement:
+            Effect: Allow
+            Action:
+              - secretsmanager:GetSecretValue
+            Resource: !Sub arn:aws:secretsmanager:${AWS::Region}:${AWS::AccountId}:secret:Lazio_disco_bot-HAqWT0
+      Environment:
+        Variables:
+          LOG_TABLE_NAME: !Ref LazioDiscoLogs
+
+  LazioDiscoLogs:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: LazioDiscoLogs
+      AttributeDefinitions:
+        - AttributeName: LogId
+          AttributeType: S
+      KeySchema:
+        - AttributeName: LogId
+          KeyType: HASH
+      BillingMode: PAY_PER_REQUEST
