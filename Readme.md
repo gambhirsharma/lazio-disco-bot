@@ -102,6 +102,7 @@ The `Lazio-serverless` directory contains an AWS SAM (or Serverless Framework) t
 # Architecture
 
 Below is the serverless deployment architecture for Lazio Disco Bot:
+![Lazio-Serverless Diagram](https://github.com/user-attachments/assets/a34e77c0-17e4-445b-9ea1-281b02c33b82)
 
 
 - **Scheduler**: A CloudWatch Events rule triggers the Lambda function every 30 minutes.
