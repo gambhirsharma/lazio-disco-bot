@@ -24,3 +24,8 @@ AlexaSkill, Api, CloudWatchEvent, CloudWatchLogs, Cognito, DocumentDB, DynamoDB,
 ---
 
 AWS SAM does not support the `.env` convention. Read this [blog](https://blowstack.com/blog/how-to-use-environmental-variables-in-aws-sam) for more info
+
+---
+
+Copy `.env.example` to `.env` and fill in your AWS credentials.
+Run `source .env` in your terminal before using the AWS CLI with this project.
