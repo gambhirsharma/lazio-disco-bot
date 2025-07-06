@@ -1,5 +1,7 @@
 # lazio-serverless
 
+> check out the blog about [Serverless Scraper with AWS SAM & DynamoDB](https://www.gambhir.dev/posts/lazio-disco-serverless-bot)
+
 ### My learning: 
 - You need to `sam build` for every change you make in the code.
 - check if `tempate.yaml` is correct by using `sam validate --lint`
