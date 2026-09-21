@@ -1,0 +1,4 @@
+{
+  "statusCode": 200,
+  "body": "{\"message\": \"the function is running\", \"time\": \"15/12/2024 12:17:08\", \"run_count\": 3}"
+}

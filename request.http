@@ -1,0 +1,7 @@
+GET https://dirstudio.laziodisco.it/Home/MessaggiDisco HTTP/1.1
+
+{ 
+    "username": "Gambhir",
+    "password": "Meridean@2024" 
+}
+

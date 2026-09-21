@@ -1,0 +1,80 @@
+﻿dt{
+    margin-top: 15px !important;
+}
+
+.LogoDisco {
+    width: 200px;
+    height: 100px;
+    background-image: url('../img/logo/disco-logo.png');
+    background-size: contain;
+    background-repeat: no-repeat
+}
+
+.LogoDiscoResponsive {
+    background-image: url('../img/logo/disco-logo.png');
+    background-size: contain;
+    background-repeat: no-repeat
+}
+
+.CardDisco {
+    border: 1px solid #dededed7;
+    border-right: 1px solid #dededed7 !important;
+    border-radius: 10px;
+    box-shadow: 2.5px 5px 4px #dedede;
+    margin-bottom: 20px;
+    padding: 2em;
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+    .LogoDisco {
+        height: 60px;
+    }
+
+    .CardCenter {
+        margin-left: calc(50% - 400px);
+        margin-right: 50%
+    }
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+    .LogoDisco {
+        height: 60px;
+    }
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+    .LogoDisco {
+        height: 60px;
+    }
+}
+
+
+
+/*loader*/
+.overlayLoader {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background: rgb(222,222,222,0.3) url("/img/logo/loader-img.gif") center no-repeat;
+}
+/* Turn off scrollbar when body element has the loading class */
+body.loading {
+    overflow: hidden;
+}
+    /* Make spinner image visible when body element has the loading class */
+    body.loading .overlayLoader {
+        display: block;
+    }
+
