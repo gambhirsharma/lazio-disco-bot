@@ -1,5 +1,7 @@
 # Building a Serverless Web Scraper on AWS Lambda: Lessons from Lazio Disco Bot
 
+> Build a serverless web scraper on AWS Lambda with EventBridge scheduling, Secrets Manager, DynamoDB logging, Telegram alerts, and AWS SAM.
+
 ## Introduction
 
 A scraper that runs for a few seconds every 30 minutes doesn't need a server running all day. It fits AWS Lambda well: you pay per invocation, EventBridge handles the schedule, and there is no machine to patch.
